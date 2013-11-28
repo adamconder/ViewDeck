@@ -2331,6 +2331,21 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     if ([[touch view] isKindOfClass:[UISlider class]])
         return NO;
 
+//    if ([[[touch view] superview] isKindOfClass:[UIScrollView class]]) {
+//        UIScrollView *scrollView = (UIScrollView*)[[touch view] superview];
+////        [[scrollView panGestureRecognizer] setEnabled:true];
+////        CGPoint velocityX = [[scrollView panGestureRecognizer] velocityInView:scrollView];
+////        [scrollView setContentOffset:velocityX];
+////        if ([[scrollView delegate] respondsToSelector:@selector(scrollViewDidScroll:)]) {
+////            [[scrollView delegate] scrollViewDidScroll:scrollView];
+////        }
+////        [scrollView gestureRecognizerShouldBegin:gestureRecognizer];
+//        CGFloat pageWidth = scrollView.contentSize.width /2;
+//        CGFloat x = 2 * pageWidth;
+//        [scrollView scrollRectToVisible:CGRectMake(x, 0, pageWidth, scrollView.frame.size.height) animated:YES];
+//        return NO;
+//    }
+    
     _panOrigin = self.slidingControllerView.frame.origin;
     return YES;
 }
